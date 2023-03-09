@@ -21,15 +21,15 @@ const passengerMap = [
 
 
 function findNewRide(driverPositionX, driverPositionY){
-    let distancia = 32
+    let distance = 32
     let local = []
     for(let i = 0; i < passengerMap.length; i++){
-        let filho = passengerMap[i]
-        for(let j = 0 ; j < filho.length; j++){
-            if(filho[j] == 1){
-                let calculo = ((i-driverPositionX)**2 + (j-driverPositionY)**2)**0.5
-                if(distancia > calculo){
-                    distancia = calculo
+        let passengerArea = passengerMap[i]
+        for(let j = 0 ; j < passengerArea.length; j++){
+            if(passengerArea[j] == 1){
+                let calculation = ((i-driverPositionX)**2 + (j-driverPositionY)**2)**0.5
+                if(distance > calculation){
+                    distance = calculation
                      local = [i,j]
                     
                 } 
