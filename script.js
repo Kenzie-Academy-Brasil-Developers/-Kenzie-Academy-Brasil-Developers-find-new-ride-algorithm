@@ -21,12 +21,14 @@ const passengerMap = [
 
 
 function findNewRide(driverPositionX, driverPositionY){
+    // criei a variavel distance em 32 por conta do tamanho ser 16x16
     let distance = 32
     let local = []
     for(let i = 0; i < passengerMap.length; i++){
         let passengerArea = passengerMap[i]
         for(let j = 0 ; j < passengerArea.length; j++){
             if(passengerArea[j] == 1){
+                // a formula serve para calcular a distancia em qualquer direçao por isso pega a posição do eixo x e y eleva na 2 e depois faz a raiz(estando elevado a 0.5)
                 let calculation = ((i-driverPositionX)**2 + (j-driverPositionY)**2)**0.5
                 if(distance > calculation){
                     distance = calculation
@@ -35,8 +37,8 @@ function findNewRide(driverPositionX, driverPositionY){
                 } 
             }
         }
-    }console.log([local,`${distancia} km`])
-                return [local,`${distancia.toFixed(2)} km`]
+    }console.log([local,`${distance} km`])
+                return [local,`${distance.toFixed(2)} km`]
 }
 
 
